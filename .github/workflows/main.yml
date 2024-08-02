@@ -26,4 +26,4 @@ jobs:
         - name: upload the result video to artefacts
           uses: actions/upload-artifact@v4.3.4
           with:
-              path: *.*
+              path: "*.*"
