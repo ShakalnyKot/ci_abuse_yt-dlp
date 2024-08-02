@@ -1,0 +1,19 @@
+on:
+    push:
+        branches:
+        - main
+
+jobs:
+    download_video:
+        name: download video
+        runs-on: ubuntu-latest
+        steps:
+        - name: install yt-dlp
+          run: |
+              apt update && apt upgrade -y && apt install yt-dlp -y
+        - name: download the video https://youtu.be/OKc-yQEiWjc
+          run: yt-dlp https://youtu.be/OKc-yQEiWjc
+        - name: upload the result video to artefacts
+          uses: actions/download-artifact@v4.1.8
+          with:
+              github-token: ${{ secrets.GITHUB_TOKEN }}
