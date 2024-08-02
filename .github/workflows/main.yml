@@ -10,7 +10,7 @@ jobs:
         steps:
         - name: install git & co
           run: |
-              sudo apt update && sudo apt install wget python3 ffmpeg phantomjs -y
+              sudo apt update && sudo apt install wget python3 ffmpeg -y
         - name: install yt-dlp
           run: |
               wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
