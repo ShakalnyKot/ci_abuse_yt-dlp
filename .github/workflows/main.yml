@@ -5,6 +5,7 @@ on:
 
 jobs:
     download_video:
+        permissions: write-all
         name: download video
         runs-on: ubuntu-latest
         steps:
@@ -16,11 +17,10 @@ jobs:
               wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
         - name: download the video https://youtu.be/OKc-yQEiWjc
           run: |
-              python3 yt-dlp https://youtu.be/OKc-yQEiWjc -o video
+              python3 yt-dlp https://youtu.be/OKc-yQEiWjc
               ls
         - name: upload the result video to artefacts
           uses: actions/download-artifact@v4.1.8
           with:
               github-token: ${{ secrets.GITHUB_TOKEN }}
-              name: video.*
               
