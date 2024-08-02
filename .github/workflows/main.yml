@@ -9,16 +9,21 @@ jobs:
         name: download video
         runs-on: ubuntu-latest
         steps:
-        - name: install yt-dlp deps
+        # - name: install yt-dlp deps
+        #   run: |
+        #       sudo apt update && sudo apt install wget python3 ffmpeg -y
+        # - name: install yt-dlp
+        #   run: |
+        #       wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
+        # - name: download the video https://youtu.be/OKc-yQEiWjc
+        #   run: |
+        #       python3 yt-dlp https://youtu.be/OKc-yQEiWjc
+        #       ls
+        - name: test
           run: |
-              sudo apt update && sudo apt install wget python3 ffmpeg -y
-        - name: install yt-dlp
-          run: |
-              wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
-        - name: download the video https://youtu.be/OKc-yQEiWjc
-          run: |
-              python3 yt-dlp https://youtu.be/OKc-yQEiWjc
+              touch video.mp4
               ls
+              pwd
         - name: upload the result video to artefacts
           uses: actions/download-artifact@v4.1.8
           with:
