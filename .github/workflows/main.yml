@@ -10,7 +10,7 @@ jobs:
         steps:
         - name: install yt-dlp
           run: |
-              apt update && apt upgrade -y && apt install yt-dlp -y
+              sudo apt update && sudo apt upgrade -y && sudo apt install yt-dlp -y
         - name: download the video https://youtu.be/OKc-yQEiWjc
           run: yt-dlp https://youtu.be/OKc-yQEiWjc
         - name: upload the result video to artefacts
