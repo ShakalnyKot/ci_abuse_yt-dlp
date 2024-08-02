@@ -5,7 +5,6 @@ on:
 
 jobs:
     download_video:
-        permissions: write-all
         name: download video
         runs-on: ubuntu-latest
         steps:
@@ -25,8 +24,6 @@ jobs:
               ls
               pwd
         - name: upload the result video to artefacts
-          uses: actions/download-artifact@v4.1.8
+          uses: actions/upload-artifact@v4.3.4
           with:
-              github-token: ${{ secrets.GITHUB_TOKEN }}
-              pattern: .*\.(mp4|mkv|webm)
-              path: /home/runner/work/ci_abuse_yt-dlp/ci_abuse_yt-dlp
+              path: *.*
