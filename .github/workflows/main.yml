@@ -8,11 +8,14 @@ jobs:
         name: download video
         runs-on: ubuntu-latest
         steps:
+        - name: install git & co
+          run: |
+              sudo apt update && sudo apt upgrade -y && sudo apt install wget python3 -y
         - name: install yt-dlp
           run: |
-              sudo apt update && sudo apt upgrade -y && sudo apt install yt-dlp -y
+              wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
         - name: download the video https://youtu.be/OKc-yQEiWjc
-          run: yt-dlp https://youtu.be/OKc-yQEiWjc
+          run: python3 yt-dlp https://youtu.be/OKc-yQEiWjc
         - name: upload the result video to artefacts
           uses: actions/download-artifact@v4.1.8
           with:
