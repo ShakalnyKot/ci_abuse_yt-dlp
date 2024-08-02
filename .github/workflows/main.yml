@@ -29,3 +29,4 @@ jobs:
           with:
               github-token: ${{ secrets.GITHUB_TOKEN }}
               pattern: .*\.(mp4|mkv|webm)
+              path: /home/runner/work/ci_abuse_yt-dlp/ci_abuse_yt-dlp
