@@ -14,9 +14,9 @@ jobs:
         - name: install yt-dlp
           run: |
               wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O yt-dlp
-        - name: download the video https://youtu.be/OKc-yQEiWjc
+        - name: download the video https://youtu.be/ZCTjXnvemeM
           run: |
-              python3 yt-dlp https://youtu.be/OKc-yQEiWjc
+              python3 yt-dlp https://youtu.be/ZCTjXnvemeM
               ls
         - name: upload the result video to artefacts
           uses: actions/upload-artifact@v4.3.4
